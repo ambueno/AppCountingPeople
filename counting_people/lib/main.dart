@@ -36,16 +36,12 @@ class _MyHomePageState extends State<MyHomePage> {
   static const int _maxStudents = 36;
 
   void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+    setState(() {_counter++;});
     _checkCounter();
   }
 
   void _decrementCounter() {
-    setState(() {
-      _counter--;
-    });
+    setState(() {_counter--;});
     _checkCounter();
   }
 
@@ -55,42 +51,17 @@ class _MyHomePageState extends State<MyHomePage> {
     _checkIfCounterIsInsideBoundaries();
   }
 
-  void _checkIfCounterIsInsideBoundaries() {
-    if(_counter >= _minStudents && _counter <= _maxStudents) _handleDefaultClassStateMessage();
-  }
+  void _checkIfCounterIsInsideBoundaries() { if(_counter >= _minStudents && _counter <= _maxStudents) _handleDefaultClassStateMessage(); }
 
-  // void _checkIfCounterIsLessThanZero() {
-  //   (_counter < minStudents) ? _handleCounterIsLessThanZero() : _handleDefaultClassStateMessage();
-  // }
-  //
-  // void _checkIfCounterIsMoreThanTotalOfStudents() {
-  //   (_counter >= maxStudents) ? _handleCounterIsMoreThanTotalOfStudents() : _handleDefaultClassStateMessage();
-  // }
+  void _checkIfCounterIsLessThanZero() { if(_counter < _minStudents) _handleCounterIsLessThanZero(); }
 
-  void _checkIfCounterIsLessThanZero() {
-    if(_counter < _minStudents) _handleCounterIsLessThanZero();
-  }
+  void _checkIfCounterIsMoreThanTotalOfStudents() { if(_counter >= _maxStudents) _handleCounterIsMoreThanTotalOfStudents(); }
 
-  void _checkIfCounterIsMoreThanTotalOfStudents() {
-    if(_counter >= _maxStudents) _handleCounterIsMoreThanTotalOfStudents();
-  }
+  void _handleDefaultClassStateMessage() { setState(() {_currentClassStateMessage = "Chega mais :)";}); }
 
-  void _handleDefaultClassStateMessage() {
-    setState(() {
-      _currentClassStateMessage = "Chega mais :)";
-    });
-  }
-  void _handleCounterIsLessThanZero() {
-    setState(() {
-      _currentClassStateMessage = "Alunos negativos???? Wtf";
-    });
-  }
+  void _handleCounterIsLessThanZero() { setState(() {_currentClassStateMessage = "Alunos negativos???? Wtf";}); }
 
-  void _handleCounterIsMoreThanTotalOfStudents() {
-    setState(() {
-      _currentClassStateMessage = "Tem pc pra mais gente nao";
-    });
-  }
+  void _handleCounterIsMoreThanTotalOfStudents() { setState(() {_currentClassStateMessage = "Tem pc pra mais gente nao";}); }
 
   @override
   Widget build(BuildContext context) {
