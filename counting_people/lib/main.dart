@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -47,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _checkCounter(){
     _checkIfCounterIsLessThanZero();
-    _checkIfCounterIsMoreThanTotalOfStudents();
+    _checkIfCounterIsGreaterThanTotalOfStudents();
     _checkIfCounterIsInsideBoundaries();
   }
 
@@ -55,13 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _checkIfCounterIsLessThanZero() { if(_counter < _minStudents) _handleCounterIsLessThanZero(); }
 
-  void _checkIfCounterIsMoreThanTotalOfStudents() { if(_counter >= _maxStudents) _handleCounterIsMoreThanTotalOfStudents(); }
+  void _checkIfCounterIsGreaterThanTotalOfStudents() { if(_counter >= _maxStudents) _handleCounterIsGreaterThanTotalOfStudents(); }
 
   void _handleDefaultClassStateMessage() { setState(() {_currentClassStateMessage = "Chega mais :)";}); }
 
   void _handleCounterIsLessThanZero() { setState(() {_currentClassStateMessage = "Alunos negativos???? Wtf";}); }
 
-  void _handleCounterIsMoreThanTotalOfStudents() { setState(() {_currentClassStateMessage = "Tem pc pra mais gente nao";}); }
+  void _handleCounterIsGreaterThanTotalOfStudents() { setState(() {_currentClassStateMessage = "Tem pc pra mais gente nao";}); }
 
   @override
   Widget build(BuildContext context) {
