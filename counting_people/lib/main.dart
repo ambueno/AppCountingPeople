@@ -123,8 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
             ),
             Text(
-                '$_currentClassStateMessage',
-                style: TextStyle(
+                _currentClassStateMessage,
+                style: const TextStyle(
                   color: Colors.black54,
                   fontWeight: FontWeight.bold,
                   fontSize: 32,
